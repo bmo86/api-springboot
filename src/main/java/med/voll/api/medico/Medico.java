@@ -34,4 +34,19 @@ public class Medico {
         this.espacialidad = data.espacialidad();
         this.address = new Direction(data.address());
     }
+
+    public void updateDoc(DataUpdateDoctor updateMed) {
+        if (updateMed.name() != null) {
+            this.name = updateMed.name();
+        }
+        if (updateMed.document() != null) {
+            this.document = updateMed.document();
+        }
+        if (updateMed.address() != null) {
+            this.address = address.updateAddr(updateMed.address());
+        }
+
+
+
+    }
 }
