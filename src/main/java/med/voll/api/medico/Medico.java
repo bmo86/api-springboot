@@ -3,6 +3,8 @@ package med.voll.api.medico;
 import jakarta.persistence.*;
 import lombok.*;
 import med.voll.api.address.direction.Direction;
+import med.voll.api.medico.dto.DataRegisterDoctor;
+import med.voll.api.medico.dto.DataUpdateDoctor;
 
 @Table(name = "medicos")
 @Entity(name = "Medico")
