@@ -1,8 +1,7 @@
-package med.voll.api.medico.direction;
+package med.voll.api.address.direction;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import med.voll.api.address.DataDirection;
