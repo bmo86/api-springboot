@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Mario Monje",
+    "email": "monje.bmo2@gmail.com",
+    "phone": "12345678",
+    "document": "111113",
+    "specialty": "ORTOPEDIA",
+    "address": {
+      "street": "Street 2",
+      "district": "District 2",
+      "city": "Guatemala",
+      "number": 2,
+      "complement": "A"
+    }
+  },
+  {
+    "name": "Ana López",
+    "email": "ana.lopez@example.com",
+    "phone": "98765432",
+    "document": "222225",
+    "specialty": "CARDIOLOGIA",
+    "address": {
+      "street": "Calle Principal",
+      "district": "Distrito Norte",
+      "city": "Ciudad de Ejemplo",
+      "number": 45,
+      "complement": "C"
+    }
+  },
+  {
+    "name": "Laura González",
+    "email": "laura.gonzalez@example.com",
+    "phone": "87654321",
+    "document": "333336",
+    "specialty": "GINECOLOGIA",
+    "address": {
+      "street": "Avenida Central",
+      "district": "Distrito Sur",
+      "city": "Otra Ciudad",
+      "number": 67,
+      "complement": "D"
+    }
+  },
+  {
+    "name": "Carlos Pérez",
+    "email": "carlos.perez@example.com",
+    "phone": "76543210",
+    "document": "444447",
+    "specialty": "PEDIATRIA",
+    "address": {
+      "street": "Calle 5",
+      "district": "Distrito Este",
+      "city": "Ciudad Imaginaria",
+      "number": 89,
+      "complement": "E"
+    }
+  },
+  {
+    "name": "Luisa Martínez",
+    "email": "luisa.martinez@example.com",
+    "phone": "56789012",
+    "document": "555550",
+    "specialty": "ORTOPEDIA",
+    "address": {
+      "street": "Calle 3",
+      "district": "Distrito Oeste",
+      "city": "Ciudad de Prueba",
+      "number": 10,
+      "complement": "F"
+    }
+  },
+  {
+    "name": "Sofía Ramírez",
+    "email": "sofia.ramirez@example.com",
+    "phone": "23456789",
+    "document": "222266",
+    "specialty": "PEDIATRIA",
+    "address": {
+      "street": "Avenida 7",
+      "district": "Distrito Norte",
+      "city": "Ciudad Nueva",
+      "number": 30,
+      "complement": "Z"
+    }
+  },
+  {
+    "name": "Isabel Sánchez",
+    "email": "isabel.sanchez@example.com",
+    "phone": "34567890",
+    "document": "666661",
+    "specialty": "ORTOPEDIA",
+    "address": {
+      "street": "Calle 8",
+      "district": "Distrito Oeste",
+      "city": "Ciudad Nueva",
+      "number": 15,
+      "complement": "G"
+    }
+  },
+  {
+    "name": "Javier Torres",
+    "email": "javier.torres@example.com",
+    "phone": "45678901",
+    "document": "777772",
+    "specialty": "CARDIOLOGIA",
+    "address": {
+      "street": "Avenida 10",
+      "district": "Distrito Este",
+      "city": "Ciudad de Prueba",
+      "number": 20,
+      "complement": "H"
+    }
+  },
+  {
+    "name": "Elena Gómez",
+    "email": "elena.gomez@example.com",
+    "phone": "56789012",
+    "document": "888883",
+    "specialty": "GINECOLOGIA",
+    "address": {
+      "street": "Calle 12",
+      "district": "Distrito Sur",
+      "city": "Otra Ciudad",
+      "number": 25,
+      "complement": "I"
+    }
+  },
+  {
+    "name": "Pedro Ramirez",
+    "email": "pedro.ramirez@example.com",
+    "phone": "67890123",
+    "document": "999994",
+    "specialty": "PEDIATRIA",
+    "address": {
+      "street": "Calle 15",
+      "district": "Distrito Norte",
+      "city": "Ciudad Ejemplo",
+      "number": 30,
+      "complement": "J"
+    }
+  },
+  {
+    "name": "Sara Fernández",
+    "email": "sara.fernandez@example.com",
+    "phone": "78901234",
+    "document": "111118",
+    "specialty": "ORTOPEDIA",
+    "address": {
+      "street": "Avenida 20",
+      "district": "Distrito Central",
+      "city": "Guatemala",
+      "number": 35,
+      "complement": "K"
+    }
+  },
+  {
+    "name": "Antonio Martínez",
+    "email": "antonio.martinez@example.com",
+    "phone": "89012345",
+    "document": "222227",
+    "specialty": "CARDIOLOGIA",
+    "address": {
+      "street": "Calle 25",
+      "district": "Distrito Oeste",
+      "city": "Ciudad Imaginaria",
+      "number": 40,
+      "complement": "L"
+    }
+  }
+]

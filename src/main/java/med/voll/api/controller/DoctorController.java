@@ -2,7 +2,9 @@ package med.voll.api.controller;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
+import med.voll.api.address.DataDirection;
 import med.voll.api.medico.dto.DataRegisterDoctor;
+import med.voll.api.medico.dto.DataResponseDoctor;
 import med.voll.api.medico.dto.DataUpdateDoctor;
 import med.voll.api.medico.dto.ListDoctors;
 import med.voll.api.medico.Medico;
@@ -11,7 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import java.net.URI;
 
 @RestController
 @RequestMapping("/doctors")
@@ -21,30 +27,79 @@ public class DoctorController {
     private MedicoRepository medicoRepository;
 
     @PostMapping
-    public void RegisterDoctor(@RequestBody @Valid DataRegisterDoctor data) {
-        medicoRepository.save(new Medico(data));
+    public ResponseEntity<DataResponseDoctor> RegisterDoctor(@RequestBody @Valid DataRegisterDoctor data, UriComponentsBuilder uriBuilder) {
+        Medico medico = medicoRepository.save(new Medico(data));
+        DataResponseDoctor response = new DataResponseDoctor(
+                medico.getId(),
+                medico.getName(),
+                medico.getEmail(),
+                medico.getPhone(),
+                medico.getDocument(),
+                new DataDirection(
+                        medico.getAddress().getStreet(),
+                        medico.getAddress().getDistrito(),
+                        medico.getAddress().getCity(),
+                        String.valueOf(medico.getAddress().getNumber()),
+                        medico.getAddress().getComplement()));
+        // Return 201 created
+        // URL donde se puede acceder al recurso creado
+        // GET https: localhost:8080/doctors/1
+        URI url = uriBuilder.path("/doctors/{id}").buildAndExpand(medico.getId()).toUri();
+        return ResponseEntity.created(url).body(response);
     }
 
     @GetMapping
-    public Page<ListDoctors> listDoctor(@PageableDefault(size = 10, sort = "name") Pageable pageable) {
+    public ResponseEntity<Page<ListDoctors>> listDoctor(@PageableDefault(size = 10, sort = "name") Pageable pageable) {
         //return medicoRepository.findAll(pageable).map(ListDoctors::new);
-        return medicoRepository.findByActiveTrue(pageable).map(ListDoctors::new);
-
+        //return medicoRepository.findByActiveTrue(pageable).map(ListDoctors::new);
+        return ResponseEntity.ok(medicoRepository.findByActiveTrue(pageable).map(ListDoctors::new));
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<DataResponseDoctor> getDoctor(@PathVariable @Valid Long id) {
+        Medico med = medicoRepository.getReferenceById(id);
+        var response = new DataResponseDoctor(
+                med.getId(),
+                med.getName(),
+                med.getEmail(),
+                med.getPhone(),
+                med.getDocument(),
+                new DataDirection(
+                        med.getAddress().getStreet(),
+                        med.getAddress().getDistrito(),
+                        med.getAddress().getCity(),
+                        String.valueOf(med.getAddress().getNumber()),
+                        med.getAddress().getComplement()));
+        return ResponseEntity.ok(response);
+    }
+
 
     @PutMapping
     @Transactional
-    public void updateDoctor(@RequestBody @Valid DataUpdateDoctor data) {
+    public ResponseEntity<DataResponseDoctor> updateDoctor(@RequestBody @Valid DataUpdateDoctor data) {
         Medico med = medicoRepository.getReferenceById(data.id());
         med.updateDoc(data);
+        return ResponseEntity.ok(new DataResponseDoctor(
+                med.getId(),
+                med.getName(),
+                med.getEmail(),
+                med.getPhone(),
+                med.getDocument(),
+                new DataDirection(
+                        med.getAddress().getStreet(),
+                        med.getAddress().getDistrito(),
+                        med.getAddress().getCity(),
+                        String.valueOf(med.getAddress().getNumber()),
+                        med.getAddress().getComplement())));
     }
 
     //DELETE logic
     @DeleteMapping("/{id}")
     @Transactional
-    public void deleteDoctor(@PathVariable @Valid Long id) {
+    public ResponseEntity<DataResponseDoctor> deleteDoctor(@PathVariable @Valid Long id) {
         Medico med = medicoRepository.getReferenceById(id);
         med.updateActive();
+        return ResponseEntity.ok().build();
     }
 
 
@@ -55,7 +110,6 @@ public class DoctorController {
     }
 */
 }
-
 
 
 //patron DTO - Data Transform Object
