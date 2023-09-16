@@ -1,6 +1,6 @@
-package med.voll.api.paciente.dto;
+package med.voll.api.domain.paciente.dto;
 
-import med.voll.api.paciente.Paciente;
+import med.voll.api.domain.paciente.Paciente;
 
 public record ListsPaciente(Long id, String name, String email, String docIdentify) {
     public ListsPaciente(Paciente paciente) {

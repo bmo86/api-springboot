@@ -1,10 +1,10 @@
-package med.voll.api.address.direction;
+package med.voll.api.domain.address.direction;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.voll.api.address.DataDirection;
+import med.voll.api.domain.address.DataDirection;
 
 @Embeddable
 @Getter
