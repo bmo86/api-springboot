@@ -1,8 +1,4 @@
--- Paso 1: Elimina los datos de la tabla
-DELETE FROM medicos;
 
--- Paso 2: Resetea el índice de la tabla
-ALTER TABLE medicos AUTO_INCREMENT = 1;
 
 -- Inserta 20 registros ficticios en la tabla medicos
 INSERT INTO medicos (name, email, document, espacialidad, street, distrito, complement, number, city, phone)
